@@ -3,18 +3,31 @@
  */
 
 var React = require('react');
-var Locations=require('react-router-component').Locations;
-var Location=require('react-router-component').Location;
+var Router=require('react-router-component');
+var Locations=Router.Locations;
+var Location=Router.Location;
 var PostList = require('./components/PostList.jsx');
 var PostView = require('./components/PostView.jsx');
 
 var App = React.createClass({
     render: function() {
         return (
-            <Locations path={this.props.path}>
-                <Location path="/" handler={PostList} />
-                <Location path="/post/:id" handler={PostView} />
-            </Locations>
+              <html>
+                <head lang="en">
+                    <meta charSet="UTF-8"/>
+                    <title>React App</title>
+                    <link rel="stylesheet" href="/stylesheets/style.css"/>
+                </head>
+                <body>
+                    <div id="main">
+                        <Locations path={this.props.path}>
+                            <Location path="/" handler={PostList} />
+                            <Location path="/post/:id" handler={PostView} />
+                        </Locations>
+                    </div>
+                    <script type="text/javascript" src="/scripts/react/bundle.js"></script>
+                </body>
+               </html>
         )
     }
 });

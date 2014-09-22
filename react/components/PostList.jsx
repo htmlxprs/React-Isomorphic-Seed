@@ -9,10 +9,6 @@ var Link=require('react-router-component').Link;
 
 var PostBox = React.createClass({
 
-    makeTransition:function(){
-        Link.navigate('/post/'+this.state.post.id);
-    },
-
     render: function() {
         var post=this.props.post;
         var url='/post/'+post._id;

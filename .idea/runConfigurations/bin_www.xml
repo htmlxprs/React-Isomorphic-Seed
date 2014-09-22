@@ -4,7 +4,9 @@
       <env name="DEBUG" value="todo-react" />
     </envs>
     <browser url="http://localhost:3000/" />
+    <RunnerSettings RunnerId="NodeJS.debug" />
     <RunnerSettings RunnerId="NodeJS.run" />
+    <ConfigurationWrapper RunnerId="NodeJS.debug" />
     <ConfigurationWrapper RunnerId="NodeJS.run" />
     <method />
   </configuration>

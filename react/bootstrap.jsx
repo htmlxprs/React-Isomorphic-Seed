@@ -5,6 +5,8 @@
 var React = require('react');
 var App=require('./App.jsx');
 
-if(document) {
-    React.renderComponent(<App/>, document.getElementById('main'));
+if (typeof window !== 'undefined') {
+    window.onload = function() {
+        React.renderComponent(App(), document);
+    }
 }

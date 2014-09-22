@@ -14,6 +14,7 @@
     "fibers": "^1.0.2",
     "morgan": "~1.3.0",
     "node-jsx": "^0.11.0",
+    "react": "^0.11.2",
     "react-async": "^1.0.2",
     "react-router": "^0.7.0",
     "react-router-component": "^0.20.1",
