@@ -1,0 +1,29 @@
+{
+  "name": "todo-react",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "dependencies": {
+    "body-parser": "~1.8.1",
+    "cookie-parser": "~1.3.3",
+    "debug": "~2.0.0",
+    "ejs": "~0.8.5",
+    "express": "~4.9.0",
+    "fibers": "^1.0.2",
+    "morgan": "~1.3.0",
+    "node-jsx": "^0.11.0",
+    "react-async": "^1.0.2",
+    "react-router": "^0.7.0",
+    "react-router-component": "^0.20.1",
+    "serve-favicon": "~2.1.3",
+    "superagent": "^0.18.2"
+  },
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-browserify": "^3.0.1",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-react": "^0.9.0"
+  }
+}
