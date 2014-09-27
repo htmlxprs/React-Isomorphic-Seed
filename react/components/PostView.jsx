@@ -12,11 +12,10 @@ var PostView = React.createClass({
 
     getInitialStateAsync: function(cb) {
         var id=this.props.id;
-        request.get('http://spblogger-sitepointdemos.rhcloud.com/api/posts/'+id, function(response) {
+        request.get('http://localhost:8000/api/posts/'+id, function(response) {
             cb(null, {post:response.body});
         });
     },
-
     render: function() {
         return (
             <div className="singlePost">

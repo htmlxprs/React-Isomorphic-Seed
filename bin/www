@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-var debug = require('debug')('todo-react');
+var debug = require('debug')('react-starter');
 var app = require('../app');
 
 app.set('port', process.env.PORT || 8000);

@@ -4,12 +4,23 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var url=require('url');
+var posts=require('./routes/posts');
 
-var routes = require('./routes/index');
-var users = require('./routes/users');
-
+require('node-jsx').install({extension:'.jsx'});
+var ReactAsync=require('react-async');
+var App=require('./react/App.jsx');
 
 var app = express();
+
+//connect to our database
+var mongoose = require('mongoose');
+
+var dbName='blogger';
+
+var connectionString='mongodb://localhost:27017/'+dbName;
+
+mongoose.connect(connectionString);
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -23,8 +34,15 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', routes);
-app.use('/users', users);
+app.use('/api',posts);
+
+app.get('*',function(req,res){
+    var path = url.parse(req.url).pathname;
+    ReactAsync.renderComponentToStringWithAsyncState(App({path:path}),function(err, markup) {
+        res.send('<!DOCTYPE html>'+markup);
+    });
+});
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

@@ -7,7 +7,7 @@ var request=require('superagent');
 var ReactAsync=require('react-async');
 var Link=require('react-router-component').Link;
 
-var PostBox = React.createClass({
+var Post = React.createClass({
 
     render: function() {
         var post=this.props.post;
@@ -24,7 +24,7 @@ var PostList = React.createClass({
     mixins: [ReactAsync.Mixin],
 
     getInitialStateAsync: function(cb) {
-        request.get('http://spblogger-sitepointdemos.rhcloud.com/api/posts', function(response) {
+        request.get('http://localhost:8000/api/posts', function(response) {
             cb(null, {posts:response.body});
         });
     },
@@ -32,7 +32,7 @@ var PostList = React.createClass({
     render: function() {
         var postNodes = this.state.posts.map(function (post) {
           return (
-            <PostBox key={post._id} post={post}></PostBox>
+            <Post key={post._id} post={post}></Post>
           );
         });
         return (
