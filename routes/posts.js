@@ -76,8 +76,6 @@ router.route('/posts/:id')
         Post.findOne({_id:req.params.id}).exec(function(err, post) {
             if(err)
                 res.send(err);
-
-            res.json(post);
         });
     })
 
