@@ -36,7 +36,7 @@ router.route('/posts')
     .get(function(req,res){
         Post.find(function(err,posts){
             if(err)
-                res.send(err);
+                return res.send(err);
             res.json(posts);
         });
     })
@@ -45,7 +45,7 @@ router.route('/posts')
         var post=new Post(req.body);
         post.save(function(err){
             if(err)
-                res.send(err);
+                return res.send(err);
             res.send({message:'Post Added'});
         });
     });
@@ -55,7 +55,7 @@ router.route('/posts/:id')
         Post.findOne({_id:req.params.id}).exec(function(err,post){
 
             if(err)
-                res.send(err);
+                return res.send(err);
 
             for(prop in req.body){
                 post[prop]=req.body[prop];
@@ -64,7 +64,7 @@ router.route('/posts/:id')
             // save the Post
             post.save(function(err) {
                 if (err)
-                    res.send(err);
+                    return res.send(err);
 
                 res.json({ message: 'Post updated!' });
             });
@@ -75,7 +75,9 @@ router.route('/posts/:id')
     .get(function(req,res){
         Post.findOne({_id:req.params.id}).exec(function(err, post) {
             if(err)
-                res.send(err);
+                return res.send(err);
+                
+            res.send(post);
         });
     })
 
@@ -84,7 +86,7 @@ router.route('/posts/:id')
             _id: req.params.id
         }, function(err, post) {
             if (err)
-                res.send(err);
+                return res.send(err);
 
             res.json({ message: 'Successfully deleted' });
         });
