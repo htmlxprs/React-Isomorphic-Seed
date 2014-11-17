@@ -5,7 +5,7 @@
 var React = require('react');
 var ReactAsync=require('react-async');
 var request=require('superagent');
-
+var Link=require('react-router-component').Link;
 
 var PostView = React.createClass({
     mixins: [ReactAsync.Mixin],
@@ -19,7 +19,8 @@ var PostView = React.createClass({
     render: function() {
         return (
             <div className="singlePost">
-            {this.state.post.content}
+              <Link href="/">&lt;--</Link>
+              <p>{this.state.post.content}</p>
             </div>
             );
     }
