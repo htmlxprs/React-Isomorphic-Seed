@@ -1,3 +1,5 @@
+#### This repo is no longer actively maintained. We recommend [Alt](https://github.com/goatslacker/alt) for creating Isomorphic flux apps. 
+
 ## React Isomorphic Starter
 ===========================
 This repo provides starter code for creating Isomorphic apps using React and Node.js.
