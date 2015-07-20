@@ -1,4 +1,4 @@
-#### This repo is no longer actively maintained. We recommend [Alt](https://github.com/goatslacker/alt) for creating Isomorphic flux apps. 
+#### This repo is no longer actively maintained. Check out the updated [Seed Project](https://github.com/devmag-io/react-isomorphic-seed) for creating Isomorphic Flux apps. 
 
 ## React Isomorphic Starter
 ===========================
